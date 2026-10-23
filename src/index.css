@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #090d16;
+    color: #e2e8f0;
+    overflow-x: hidden;
+  }
+
+  code, kbd, samp, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom animations for logistics vector routes */
+@keyframes flow-forward {
+  from {
+    stroke-dashoffset: 64;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes flow-reverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 64;
+  }
+}
+
+@keyframes ping-slow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.animate-route-flow {
+  animation: flow-forward 2.2s linear infinite;
+}
+
+.animate-route-flow-fast {
+  animation: flow-forward 1.2s linear infinite;
+}
+
+.animate-route-flow-reverse {
+  animation: flow-reverse 2.2s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: ping-slow 3s ease-in-out infinite;
+}
+
+/* Custom terminal scrollbar */
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.4);
+  border-radius: 3px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}

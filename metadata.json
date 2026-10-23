@@ -1,0 +1,6 @@
+{
+  "name": "SupplyChain Logic & Cost Tracker",
+  "description": "Industrial logistics state machine with real-time multi-hub mesh topology visualizer, operational ticker console, and runaway freight cost optimization engine.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
